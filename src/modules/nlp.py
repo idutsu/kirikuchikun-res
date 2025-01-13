@@ -5,7 +5,7 @@ from tqdm import tqdm
 from concurrent.futures import ProcessPoolExecutor
 from sudachipy import dictionary, tokenizer
 from spacy.tokens import Doc
-from constants import WIKIPEDIA_TEXT, WIKIPEDIA_TEST_TEXT
+from constants import WIKIPEDIA_TEXT, WIKIPEDIA_SENT_TEXT, WIKIPEDIA_TEST_TEXT
 
 
 class CustomSudachiTokenizer:
@@ -149,5 +149,4 @@ if __name__ == "__main__":
     output_path = "/home/ubuntu/nlp/tmp_result.csv" # 出力パス 
     keyword     = "横断歩道"  # 抽出対象のキーワード
 
-    extract_dependency_words(WIKIPEDIA_TEST_TEXT, output_path, keyword)
-
+    extract_dependency_words(WIKIPEDIA_SENT_TEXT, output_path, keyword)
