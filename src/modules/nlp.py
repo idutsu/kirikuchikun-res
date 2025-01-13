@@ -35,7 +35,7 @@ class CustomSudachiTokenizer:
         tokens = self.sudachi_tokenizer.tokenize(keyword)
         return any(m.dictionary_form() == keyword for m in tokens)
 
-def initialize_ginza_with_sudachi(split_mode="C"):
+def init_ginza_with_sudachi(split_mode="C"):
     """
     Ginzaモデルを初期化し、Sudachiのトークナイザーを設定
     Returns:
@@ -141,7 +141,7 @@ def extract_dependency_words(input_path, output_path, keyword, num_workers=4):
         return []
 
 # Ginzaモデルをロード
-nlp = initialize_ginza_with_sudachi(split_mode="C")
+nlp = init_ginza_with_sudachi(split_mode="C")
 
 # 使用例
 if __name__ == "__main__":
